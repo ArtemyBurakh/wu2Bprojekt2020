@@ -15,8 +15,41 @@
         <na id="nav1"></nav> 
         <nav id="nav2"></nav>
         <nav id="nav3"></nav>
-        <article></article>
+        <article>
+            <h2>Style</h2>
+                <select type="multiple" id="style">
+                    <option value="elegant">Elegant</option>
+                    <option value="evil">Evil</option>
+                    <option value="rustic">Rustic</option>
+                    <option value="otherworldly">Otherworldy</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="southern">Southern</option>
+                </select>
+            <h2>Type</h2>
+            <select type="multiple" id="pnametype">
+                <option value="name-f">First</option>
+                <option value="name-fl">First Last</option>
+                <option value="name-fml">First Middle Last</option>
+                <option value="name-fmll">First Middle Last Last</option>
+                <option value="name-fll">First Last Last</option>
+            </select>
+            <br>
+            <h2>Title Style</h2>
+            <select type="multiple" id="titleStyle">
+                <option value="noTitle">No Title</option>
+                <option value="military">Military</option>
+                <option value="religious">Religious</option>
+                <option value="royal">Royal</option>
+                <option value="noble">Noble</option>
+                <option value="common">Common</option>
+            </select>
+            <br>
+            <input type="submit" value="Generate Name" onclick="genPname();">
+            <br>
+            <h3><span id="nameout"></span></h3>
+        </article>
         <footer></footer>
+
     </div>
 </body>
 </html>
