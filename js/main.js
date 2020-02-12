@@ -1,13 +1,14 @@
-//Create empty variables
+//Create empty variables to prevent errors
 var style="null";
 var type="null";
 var output="null";
 var pattern =  0;
 var finalName = "null";
 var title = "null";
-var regex = new RegExp("([b-df-hj-np-tv-z])\1{2,}");
-
-
+var regex3C = new RegExp("([fhlmnsvwz][fhlmnsvwz][fhlmnsvwz])+");
+var regex4C = new RegExp("([bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz])+");
+var regex5C = new RegExp("([bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz])+");
+var result = false;
 
 //Elegant Syllables
 var elegantff=["El", "Il", "Vei", "Sa", "Se", "Mei", "Lae", "Ili", "Sie", "Et-", "Ca", "Ca-", "Ët", "Sï", "Ëf"];
@@ -42,16 +43,20 @@ var  religiousTitles=["Chaplain","Chancellor","Archbishop","Bishop","Priest","Hi
 var royalTitles=["King", "Queen", "Emperor", "Empress", "Regent", "Prince", "Princess"];
 var  royalSuffixes=["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "X","XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "", "", "", ""];
 
+//Random function
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
 };
 
+//Generate  Person's Name
 function genPname(){
+   
+    //Retrieve dropdown values    
     var style=document.getElementById("style").value;
-    var type=document.getElementById("pnametype").value;
+    var type=document.getElementById("pNameType").value;
     var titleStyle=document.getElementById("titleStyle").value;
 
-
+    //Select a syllable set based on retrieved style and generate the four potentential names
     if (style=="elegant") {
         var firstName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
         var midName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
@@ -74,12 +79,22 @@ function genPname(){
         var familyName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)];
     };
 
-    if (type=="name-f") {finalName = firstName;};
-    if (type=="name-fl") {finalName = firstName + " " + lastName;};
-    if (type=="name-fml") {finalName = firstName + " " + midName + " "+ lastName;};
-    if (type=="name-fmll") {finalName = firstName + " " + midName + " "+ lastName + " " + familyName;};
-    if (type=="name-fll") {finalName = firstName +  " "+ lastName + " " + familyName;};
+    //Arranage the names based on type 
+    if (type=="name-f") {
+        finalName = firstName;
+    } else if (type=="name-l") {
+        finalName = lastName;
+    } else if (type=="name-fl") {
+        finalName = firstName + " " + lastName;
+    } else if (type=="name-fml") {
+        finalName = firstName + " " + midName + " "+ lastName;
+    } else if (type=="name-fmll") {
+        finalName = firstName + " " + midName + " "+ lastName + " " + familyName;
+    } else if (type=="name-fll") {
+        finalName = firstName +  " "+ lastName + " " + familyName;
+    };
 
+    //Add titles, unless no title is selected
     if (titleStyle=="noTitle") {
         output = finalName;
     } else if (titleStyle=="military") {
@@ -96,13 +111,20 @@ function genPname(){
         output = title + " " + finalName +  " " + royalSuffixes[getRndInteger(0,royalSuffixes.length - 1)] ;
     };
     
-    var result = regex.test(output);
+    //Checks the output against a number regex that prevent unpronouncable names from being generated, unless the style is set to otherworldly
+     
+    if (style=="otherworldly") {
+      
+        } else {
+            //Tests for three hard consonants in a row
+            result = regex3C.test(output);
 
-    if (result==true){
-        genPname();
-    } else {
+            //If the regex test result is positive,  generate a new name 
+            if (result==true){
+            genPname();
+        } else {
 
+        };
     };
-
     document.getElementById('nameout').innerHTML =  output;
 };
