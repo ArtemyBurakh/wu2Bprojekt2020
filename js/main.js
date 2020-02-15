@@ -14,12 +14,14 @@ var midName="null";
 var lastName="null";
 var familyName="null";
 var natureName="null";
+var natureWord="null";
 
 //Create regex
 var regex3C = new RegExp("([fhlmnsvwz][fhlmnsvwz][fhlmnsvwz])+");
 var regex4C = new RegExp("([bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz])+");
 var regexScore = new RegExp("-\s");
 var regexAp = new RegExp("'\s");
+var regexSingle = new RegExp("[A-Z]\s");
 
 
 //Syllables are split into  4-5 groups
@@ -62,20 +64,22 @@ var religiousTitles=["Chaplain","Chancellor","Archbishop","Bishop","Priest","Hig
 var royalTitles=["King", "Queen", "Emperor", "Empress", "Regent", "Prince", "Princess"];
 var  royalSuffixes=["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "X","XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "", "", "", ""];
 
-var englishPrefixes=[];
-var englishSuffixes=[];
+var englishPrefixesUni=["Deep", "Reach", "Sky", "Knife", "Bleak", "Blind", "Bone", "Boulder", "Brine", "Brittle", "Broken", "Bronze", "Chill", "Crags", "Crag", "Cron", "Crystal", "Dark", "Dusk", "Elder", "Fallow", "Fore", "Gloom", "Gray", "Green", "Honey", "Moss", "Night", "Pine", "Pure", "Raven", "Reach", "Rime", "Shadow", "Shimmer", "Snap", "Still", "Sunder", "White", "Wolf", "Autumn", "Wind", "Ice", "Bone", "Dragon", "Elders", "North", "Shear", "Sky", "Chill", "Corpe", "Merry", "Drift", "Fell", "Mist", "Bleak", "Steam", "Stone", "Ember", "Gloom", "Golden", "Red", "Banner", "Bleak", "Wind", "Cliff", "Iron", "River", "Arc", "Shriek", "Snow", "Sand", "Leaf", "Sun", "Heart", "Moor"];
+var englishSuffixesUni=[];
+var englishPrefixesSep=[];
+var englishSuffixesSep=[];
 
 /* -----------------------------------*/
 
-var rivers=["River", "River", "River", "Creek", "Brook", "Run"];
-var lakes=["Lake", "Lake", "Lake", "Pond", "Basin", "Pool"];
+var rivers=["River", "River", "River", "River", "Creek", "Brook", "Run"];
+var lakes=["Lake", "Lake", "Lake", "Lake", "Pond", "Basin", "Pool"];
 var seas=["Ocean", "Sea"];
-var  valleys=["Dale", "Valley", "Vale", "Dell", "Pass", "Crevice"];
-var  mountains=["Mountain", "Peak", "Hill", "Ridge"];
-var  caves=["Cave", "Cave", "Cave", "Grotto", "Hollow", "Cavern", "Redoubt", "Depths", "Slope", "Burrow", "Caverns"];
+var valleys=["Dale", "Valley", "Vale", "Dell", "Pass", "Crevice"];
+var mountains=["Mountain", "Peak", "Hill", "Ridge"];
+var caves=["Cave", "Cave", "Cave", "Grotto", "Hollow", "Cavern", "Redoubt", "Depths", "Slope", "Burrow", "Caverns"];
 var ravines=["Ravine", "Canyon"];
-var  peaks=["Peak", "Point", "Bluff"];
-var clearings=["Clearing", "Glade"];
+var peaks=["Peak", "Point", "Bluff"];
+var clearings=["Clearing", "Glade", "Glenn"];
 var deserts=["Desert", "Flats", "Wilds"];
 var forests=["Forest", "Forest", "Wood", "Woods", "Woodlands"];
 
@@ -195,6 +199,16 @@ function genPname(){
 
     };
 
+    //Test for a capital letter followed by a whilespace
+    result = regexSingle.test(output);
+
+      //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
     //Display output
     document.getElementById('nameout').innerHTML =  output;
 };
@@ -202,7 +216,8 @@ function genPname(){
 function genNatureName() {
     style=document.getElementById("NatureNameStyle").value;
     type=document.getElementById("NatureNameType").value;
-    pattern=getRndInteger(0,5);
+    
+    pattern=getRndInteger(0,8);
 
      if (style=="elegant") {
         
@@ -222,7 +237,7 @@ function genNatureName() {
 
     } else if (style=="rustic") {
         
-        if (getRndInteger(0,2)==1) {
+        if (getRndInteger(0,1)==1) {
             natureName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
         } else {
             natureName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)];
@@ -235,15 +250,13 @@ function genNatureName() {
         } else {
             natureName = nordiclf[getRndInteger(0, nordiclf.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)];
         };
-    };
 
-    //Display output
-    document.getElementById('nameout').innerHTML =  natureName;    
+    };    
 
     if (type=="river") {
-
+        natureWord=rivers[getRndInteger(0, rivers.length - 1)];
     } else if (type=="lake") {
-
+        natureWord=lakes[getRndInteger(0, lakes.length - 1)];
     } else if (type=="sea") {
 
     } else if (type=="valley") {
@@ -264,4 +277,74 @@ function genNatureName() {
 
     };
 
+    if (pattern<3) {
+        finalName = natureWord + " " + natureName;
+    } else if (pattern>3 && pattern<6) {
+        finalName =  natureName + " " + natureWord;
+    } else if (pattern==7) {
+        finalName = natureName + "'s " + natureWord;
+    } else if (pattern==8) {
+        finalName = natureWord + " of " + natureName;
+    };
+
+    //Checks the output against a number regex that prevent unpronouncable names from being generated, unless the style is set to otherworldly
+    
+    if (style=="otherworldly") {
+    
+    } else {
+            //Tests for three hard consonants in a row
+            result = regex3C.test(output);
+
+            //If the regex test result is positive,  generate a new name 
+        if (result==true){
+            genPname();
+        } else {
+
+        };
+
+        //Tests for any four consonants in a row
+        result = regex4C.test(output);
+
+        //If the regex test result is positive,  generate a new name 
+        if (result==true){
+            genPname();
+        } else {
+
+        };
+    };
+
+    //Checks the output agains two regex that prevent grammatically unsound names from being generated, such as names ending in - or '
+
+    //Tests for - character followed by a blankspace
+    result = regexScore.test(output);
+
+    //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
+    //Tests for ' character followed by a blankspace
+    result = regexAp.test(output);
+
+    //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
+    //Test for a capital letter followed by a whilespace
+    result = regexSingle.test(output);
+
+        //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
+    //Display output
+    document.getElementById('nameout').innerHTML =  finalName;
 };
