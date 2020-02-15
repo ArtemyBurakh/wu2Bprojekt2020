@@ -5,10 +5,24 @@ var output="null";
 var pattern =  0;
 var finalName = "null";
 var title = "null";
+var result = false;
+var style="null";
+var type="null";
+var titleStyle="null";
+var firstName="null";
+var midName="null";
+var lastName="null";
+var familyName="null";
+var natureName="null";
+
+//Create regex
 var regex3C = new RegExp("([fhlmnsvwz][fhlmnsvwz][fhlmnsvwz])+");
 var regex4C = new RegExp("([bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz])+");
-var regex5C = new RegExp("([bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz][bcdfghjklmnpqrstvwxz])+");
-var result = false;
+var regexScore = new RegExp("-\s");
+var regexAp = new RegExp("'\s");
+
+
+//Syllables are split into  4-5 groups
 
 //Elegant Syllables
 var elegantff=["El", "Il", "Vei", "Sa", "Se", "Mei", "Lae", "Ili", "Sie", "Et-", "Ca", "Ca-", "Ët", "Sï", "Ëf"];
@@ -32,16 +46,38 @@ var rusticSuffixes=["son", "son", "sson", "dottir", "datr", "doter", "bern", "ba
 //Nordic Syllables
 var nordicff=["Yen", "Tet", "Mak", "Tsi", "Kha", "Lar"];
 var nordicfl=["ta"];
-var nordicfl=[];
-var nordicll=[];
+var nordiclf=["Mi", "Dan"];
+var nordicll=["al", "sy", "ma", "dr"];
+
+var southernff=[];
+var southernfl=[];
+var southernlf=[];
+var southernll=[];
 
 //Tiles
-var militaryTitlePrefixes=["Grand ", "Great ", "First ", "Second ", "High ", "Vice-",  "Acting ", "Honorary ",  "", "", "", "", "", "", ""];
+var militaryTitlePrefixes=["Grand ", "Great ", "First ", "Second ", "High ", "Vice-",  "Acting ", "Honorary ",  "", "", "", "", "", "", "",  "", "", "", "", "", "", ""];
 var militaryTitles=["Field Marshal", "General", "Major", "Commander", "Admiral", "Brigadier", "Colonel", "Captain", "Private", "Commodore", "Corporal", "Master-At-Arms", "Cadet", "Legate", "Prefect"];
 var nobleTitles=["Despot","Duke","Vice Duke","Archduke","Grand Duke","Duchess","Vice Duchess","Arch Duchess","Grand Duchess","Count","Countess","Earl","Earless","Jarl","Viscount","Viscountess","Baron","Baroness","Baronet","Baronetess","Knight","Lord","Lady","Lord","Viceroy","Vicereine","Dame","Esquire"];
-var  religiousTitles=["Chaplain","Chancellor","Archbishop","Bishop","Priest","High Priest","Great Priest","Teacher","Brother","Sister","Sibling","Pastor","Reverend","Elder","High Priestess","Great Priestess","Novice","Attendant","Initiate","Druid","Bard"];
+var religiousTitles=["Chaplain","Chancellor","Archbishop","Bishop","Priest","High Priest","Great Priest","Teacher","Brother","Sister","Sibling","Pastor","Reverend","Elder","High Priestess","Great Priestess","Novice","Attendant","Initiate","Druid","Bard"];
 var royalTitles=["King", "Queen", "Emperor", "Empress", "Regent", "Prince", "Princess"];
 var  royalSuffixes=["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "X","XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "", "", "", ""];
+
+var englishPrefixes=[];
+var englishSuffixes=[];
+
+/* -----------------------------------*/
+
+var rivers=["River", "River", "River", "Creek", "Brook", "Run"];
+var lakes=["Lake", "Lake", "Lake", "Pond", "Basin", "Pool"];
+var seas=["Ocean", "Sea"];
+var  valleys=["Dale", "Valley", "Vale", "Dell", "Pass", "Crevice"];
+var  mountains=["Mountain", "Peak", "Hill", "Ridge"];
+var  caves=["Cave", "Cave", "Cave", "Grotto", "Hollow", "Cavern", "Redoubt", "Depths", "Slope", "Burrow", "Caverns"];
+var ravines=["Ravine", "Canyon"];
+var  peaks=["Peak", "Point", "Bluff"];
+var clearings=["Clearing", "Glade"];
+var deserts=["Desert", "Flats", "Wilds"];
+var forests=["Forest", "Forest", "Wood", "Woods", "Woodlands"];
 
 //Random function
 function getRndInteger(min, max) {
@@ -52,31 +88,31 @@ function getRndInteger(min, max) {
 function genPname(){
    
     //Retrieve dropdown values    
-    var style=document.getElementById("style").value;
-    var type=document.getElementById("pNameType").value;
-    var titleStyle=document.getElementById("titleStyle").value;
+    style=document.getElementById("pNameStyle").value;
+    type=document.getElementById("pNameType").value;
+    titleStyle=document.getElementById("titleStyle").value;
 
     //Select a syllable set based on retrieved style and generate the four potentential names
     if (style=="elegant") {
-        var firstName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
-        var midName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
-        var lastName = elegantlf[getRndInteger(0, elegantlf.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)];
-        var familyName = elegantlf[getRndInteger(0, elegantlf.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)];
+        firstName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
+        midName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
+        lastName = elegantlf[getRndInteger(0, elegantlf.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)];
+        familyName = elegantlf[getRndInteger(0, elegantlf.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)];
     } else if (style=="evil") {
-        var firstName = evilff[getRndInteger(0, evilff.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)];
-        var midName = evilff[getRndInteger(0, evilff.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)];
-        var lastName = evillf[getRndInteger(0, evillf.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)];
-        var familyName = evillf[getRndInteger(0, evillf.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)];
+        firstName = evilff[getRndInteger(0, evilff.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)];
+        midName = evilff[getRndInteger(0, evilff.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)];
+        lastName = evillf[getRndInteger(0, evillf.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)];
+        familyName = evillf[getRndInteger(0, evillf.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)];
     } else if (style=="rustic") {
-        var firstName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
-        var midName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
-        var lastName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)]  
-        var familyName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticSuffixes[getRndInteger(0, rusticSuffixes.length-1)];
+        firstName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
+        midName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
+        lastName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)]  
+        familyName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticSuffixes[getRndInteger(0, rusticSuffixes.length-1)];
     } else if (style=="nordic") {
-        var firstName = nordicff[getRndInteger(0, nordicff.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)];
-        var midName = nordicff[getRndInteger(0, nordicff.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)];
-        var lastName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)];
-        var familyName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)];
+        firstName = nordicff[getRndInteger(0, nordicff.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)];
+        midName = nordicff[getRndInteger(0, nordicff.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)];
+        lastName = nordiclf[getRndInteger(0, nordiclf.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)];
+        familyName = nordiclf[getRndInteger(0, nordiclf.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)];
     };
 
     //Arranage the names based on type 
@@ -115,16 +151,117 @@ function genPname(){
      
     if (style=="otherworldly") {
       
-        } else {
-            //Tests for three hard consonants in a row
-            result = regex3C.test(output);
+    } else {
+         //Tests for three hard consonants in a row
+         result = regex3C.test(output);
 
-            //If the regex test result is positive,  generate a new name 
-            if (result==true){
+         //If the regex test result is positive,  generate a new name 
+        if (result==true){
             genPname();
         } else {
 
         };
+
+        //Tests for any four consonants in a row
+        result = regex4C.test(output);
+
+        //If the regex test result is positive,  generate a new name 
+       if (result==true){
+           genPname();
+       } else {
+
+       };
     };
+
+    //Checks the output agains two regex that prevent grammatically unsound names from being generated, such as names ending in - or '
+
+    //Tests for - character followed by a blankspace
+    result = regexScore.test(output);
+
+    //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
+    //Tests for ' character followed by a blankspace
+    result = regexAp.test(output);
+
+    //If the regex test result is positive,  generate a new name 
+    if (result==true){
+        genPname();
+    } else {
+
+    };
+
+    //Display output
     document.getElementById('nameout').innerHTML =  output;
+};
+
+function genNatureName() {
+    style=document.getElementById("NatureNameStyle").value;
+    type=document.getElementById("NatureNameType").value;
+    pattern=getRndInteger(0,5);
+
+     if (style=="elegant") {
+        
+        if (getRndInteger(0,2)==1) {
+            natureName = elegantff[getRndInteger(0, elegantff.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)] + elegantfl[getRndInteger(0, elegantfl.length - 1)];
+        } else {
+            natureName = elegantlf[getRndInteger(0, elegantlf.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)] + elegantll[getRndInteger(0, elegantll.length - 1)];
+        };
+        
+    } else if (style=="evil") {
+        
+        if (getRndInteger(0,2)==1) {
+            natureName = evilff[getRndInteger(0, evilff.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)] + evilfl[getRndInteger(0, evilfl.length - 1)];
+        } else {
+            natureName = evillf[getRndInteger(0, evillf.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)] + evilll[getRndInteger(0, evilll.length - 1)];
+        };
+
+    } else if (style=="rustic") {
+        
+        if (getRndInteger(0,2)==1) {
+            natureName = rusticff[getRndInteger(0, rusticff.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)] + rusticfl[getRndInteger(0, rusticfl.length - 1)];
+        } else {
+            natureName = rusticll[getRndInteger(0, rusticll.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)] + rusticlf[getRndInteger(0, rusticlf.length - 1)];
+        };
+        
+    } else if (style=="nordic") {
+        
+        if (getRndInteger(0,2)==1) {
+            natureName = nordicff[getRndInteger(0, nordicff.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)] + nordicfl[getRndInteger(0, nordicfl.length - 1)];
+        } else {
+            natureName = nordiclf[getRndInteger(0, nordiclf.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)];
+        };
+    };
+
+    //Display output
+    document.getElementById('nameout').innerHTML =  natureName;    
+
+    if (type=="river") {
+
+    } else if (type=="lake") {
+
+    } else if (type=="sea") {
+
+    } else if (type=="valley") {
+
+    } else if (type=="mountain") {
+
+    } else if (type=="cave") {
+
+    } else if (type=="ravine") {
+
+    } else if (type=="peak") {
+
+    } else if (type=="clearing") {
+
+    } else if (type=="desert") {
+
+    } else if (type=="forest") {
+
+    };
+
 };

@@ -21,7 +21,8 @@
         <nav id="nav3">Micellaneous</nav>
         <article>
             <h2>Style</h2>
-                <select type="multiple" id="pNameStyle">
+                <select type="multiple" id="NatureNameStyle">
+                    <option value="english">English</option>
                     <option value="elegant">Elegant</option>
                     <option value="evil">Evil</option>
                     <option value="rustic">Rustic</option>
@@ -30,25 +31,21 @@
                     <option value="southern">Southern</option>
                 </select>
             <h2>Type</h2>
-            <select type="multiple" id="pNameType">
-                <option value="name-f">First</option>
-                <option value="name-l">Last</option>
-                <option value="name-fl">First Last</option>
-                <option value="name-fml">First Middle Last</option>
-                <option value="name-fmll">First Middle Last Last</option>
-                <option value="name-fll">First Last Last</option>
+            <select type="multiple" id="NatureNameType">
+                <option value="river">River</option>
+                <option value="lake">Lake</option>
+                <option value="sea">Sea</option>
+                <option value="valley">Valley/Pass</option>
+                <option value="mountain">Mountain</option>
+                <option value="cave">Cave</option>
+                <option value="ravine">Ravine/Canyon</option>
+                <option value="peak">Peak</option>
+                <option value="clearing">Clearing</option>
+                <option value="desert">Desert</option>
+                <option value="forest">Forest</option>
             </select>
             <br>
-            <h2>Title Style</h2>
-            <select type="multiple" id="titleStyle">
-                <option value="noTitle" selected="true  ">No Title</option>
-                <option value="military">Military</option>
-                <option value="religious">Religious</option>
-                <option value="royal">Royal</option>
-                <option value="noble">Noble</option>
-            </select>
-            <br>
-            <input type="submit" value="Generate Name" onclick="genPname();">
+            <input type="submit" value="Generate Name" onclick="genNatureName();">
             <br>
             <h3><span id="nameout"></span></h3>
         </article>
