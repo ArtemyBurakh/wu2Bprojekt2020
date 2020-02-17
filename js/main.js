@@ -6,9 +6,7 @@ var pattern =  0;
 var finalName = "null";
 var title = "null";
 var result = false;
-var style="null";
-var type="null";
-var titleStyle="null";
+
 var firstName="null";
 var midName="null";
 var lastName="null";
@@ -57,15 +55,15 @@ var southernlf=[];
 var southernll=[];
 
 //Tiles
-var militaryTitlePrefixes=["Grand ", "Great ", "First ", "Second ", "High ", "Vice-",  "Acting ", "Honorary ",  "", "", "", "", "", "", "",  "", "", "", "", "", "", ""];
+var militaryTitlePrefixes=["Grand ", "Great ", "First ", "Second ", "High ", "Vice-",  "Acting ", "Honorary ",  "", "", "", "", "", "", "", "", "", "", "",  "", "", "", "", "", "", ""];
 var militaryTitles=["Field Marshal", "General", "Major", "Commander", "Admiral", "Brigadier", "Colonel", "Captain", "Private", "Commodore", "Corporal", "Master-At-Arms", "Cadet", "Legate", "Prefect"];
 var nobleTitles=["Despot","Duke","Vice Duke","Archduke","Grand Duke","Duchess","Vice Duchess","Arch Duchess","Grand Duchess","Count","Countess","Earl","Earless","Jarl","Viscount","Viscountess","Baron","Baroness","Baronet","Baronetess","Knight","Lord","Lady","Lord","Viceroy","Vicereine","Dame","Esquire"];
 var religiousTitles=["Chaplain","Chancellor","Archbishop","Bishop","Priest","High Priest","Great Priest","Teacher","Brother","Sister","Sibling","Pastor","Reverend","Elder","High Priestess","Great Priestess","Novice","Attendant","Initiate","Druid","Bard"];
 var royalTitles=["King", "Queen", "Emperor", "Empress", "Regent", "Prince", "Princess"];
 var  royalSuffixes=["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "X","XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "", "", "", ""];
 
-var englishPrefixesUni=["Deep", "Reach", "Sky", "Knife", "Bleak", "Blind", "Bone", "Boulder", "Brine", "Brittle", "Broken", "Bronze", "Chill", "Crags", "Crag", "Cron", "Crystal", "Dark", "Dusk", "Elder", "Fallow", "Fore", "Gloom", "Gray", "Green", "Honey", "Moss", "Night", "Pine", "Pure", "Raven", "Reach", "Rime", "Shadow", "Shimmer", "Snap", "Still", "Sunder", "White", "Wolf", "Autumn", "Wind", "Ice", "Bone", "Dragon", "Elders", "North", "Shear", "Sky", "Chill", "Corpe", "Merry", "Drift", "Fell", "Mist", "Bleak", "Steam", "Stone", "Ember", "Gloom", "Golden", "Red", "Banner", "Bleak", "Wind", "Cliff", "Iron", "River", "Arc", "Shriek", "Snow", "Sand", "Leaf", "Sun", "Heart", "Moor"];
-var englishSuffixesUni=[];
+var englishPrefixesUni=["Deep", "Reach", "Sky", "Knife", "Bleak", "Blind", "Bone", "Boulder", "Brine", "Brittle", "Broken", "Bronze", "Chill", "Crags", "Crag", "Cron", "Crystal", "Dark", "Dusk", "Elder", "Fallow", "Fore", "Gloom", "Gray", "Green", "Honey", "Moss", "Night", "Pine", "Pure", "Raven", "Reach", "Rime", "Shadow", "Shimmer", "Snap", "Still", "Sunder", "White", "Wolf", "Autumn", "Wind", "Ice", "Bone", "Dragon", "Elders", "North", "Shear", "Sky", "Chill", "Corpe", "Merry", "Drift", "Fell", "Mist", "Bleak", "Steam", "Stone", "Ember", "Gloom", "Golden", "Red", "Banner", "Bleak", "Wind", "Cliff", "Iron", "River", "Arc", "Shriek", "Snow", "Sand", "Leaf", "Bile", "Sun", "Heart", "Moor", "Doom", "Blue", "Double", "Cold", "Black", "Blood", "Bramble", "Break", "Brittle", "Little", "Deep", "Dun", "Field", "Finger", "Fyre", "Fire", "Gray", "Hay", "Kings", "Queens", "Leaf", "Red", "Sand", "Shin", "Side", "Tide", "Timber", "Toad", "Under", "Well", "Wander", "Hack", "Tre", "Tarn", "Pen", "Nant", "Aber"];
+var englishSuffixesUni=["stad", "star", "glow", "gate", "wind", "spire", "point", "coast", "chill", "fall", "shin", "wind", "lane", "lan", "wallow", "drift", "shade", "water", "glow", "gleam", "vangr", "stone", "moril", "sake", "reach", "winter", "wall", "water", "strand", "gale", "moon", "peak", "water", "scar", "cliff", "water", "green", "rock", "mist", "leg", "fringe", "fall", "stone", "skull", "shade", "spring", "helm", "water", "watch", "tooth", "wind", "point", "born", "tand", "furrow", "light", "frost", "shod", "let", "light", "shade", "watch", "call", "sand", "waste", "scorch", "scorn", "wind", "crag", "hill", "arch", "spring", "mist", "flow", "gulch", "water", "shard", "bound", "rock", "point", "wind", "hills", "mist", "bound", "helm", "mere", "grave", "wood", "moon", "claw", "leaf", "crust", "main", "run", "point", "neck", "coal", "fish", "fathom", "scorn", "barrow", "house", "bowl", "fire", "light", "mead", "crest", "stand", "guard", "pall", "tow", "bone", "way", "mark", "spring", "worth", "win", "wick", "weald", "non", "more"];
 var englishPrefixesSep=[];
 var englishSuffixesSep=[];
 
@@ -76,12 +74,14 @@ var lakes=["Lake", "Lake", "Lake", "Lake", "Pond", "Basin", "Pool"];
 var seas=["Ocean", "Sea"];
 var valleys=["Dale", "Valley", "Vale", "Dell", "Pass", "Crevice"];
 var mountains=["Mountain", "Peak", "Hill", "Ridge"];
-var caves=["Cave", "Cave", "Cave", "Grotto", "Hollow", "Cavern", "Redoubt", "Depths", "Slope", "Burrow", "Caverns"];
-var ravines=["Ravine", "Canyon"];
+var caves=["Cave", "Cave", "Cave", "Grotto", "Hollow", "Cavern", "Depths", "Slope", "Burrow", "Caverns", "Depths"];
+var ravines=["Ravine", "Canyon", "Crevice"];
 var peaks=["Peak", "Point", "Bluff"];
 var clearings=["Clearing", "Glade", "Glenn"];
 var deserts=["Desert", "Flats", "Wilds"];
 var forests=["Forest", "Forest", "Wood", "Woods", "Woodlands"];
+
+document.getElementById("natureGenerate").addEventListener("click", genPname); 
 
 //Random function
 function getRndInteger(min, max) {
@@ -92,9 +92,9 @@ function getRndInteger(min, max) {
 function genPname(){
    
     //Retrieve dropdown values    
-    style=document.getElementById("pNameStyle").value;
-    type=document.getElementById("pNameType").value;
-    titleStyle=document.getElementById("titleStyle").value;
+    var style=document.getElementById("pNameStyle").value;
+    var type=document.getElementById("pNameType").value;
+    var titleStyle=document.getElementById("titleStyle").value;
 
     //Select a syllable set based on retrieved style and generate the four potentential names
     if (style=="elegant") {
@@ -214,8 +214,8 @@ function genPname(){
 };
 
 function genNatureName() {
-    style=document.getElementById("NatureNameStyle").value;
-    type=document.getElementById("NatureNameType").value;
+    var style=document.getElementById("NatureNameStyle").value;
+    var type=document.getElementById("NatureNameType").value;
     
     pattern=getRndInteger(0,8);
 
@@ -251,20 +251,22 @@ function genNatureName() {
             natureName = nordiclf[getRndInteger(0, nordiclf.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)] + nordicll[getRndInteger(0, nordicll.length - 1)];
         };
 
-    };    
+    } else if (style=="english") {
+        natureName = englishPrefixesUni[getRndInteger(0, englishPrefixesUni.length - 1)] + englishSuffixesUni[getRndInteger(0, englishSuffixesUni.length - 1)];
+    } ; 
 
     if (type=="river") {
         natureWord=rivers[getRndInteger(0, rivers.length - 1)];
     } else if (type=="lake") {
         natureWord=lakes[getRndInteger(0, lakes.length - 1)];
     } else if (type=="sea") {
-
+        natureWord=seas[getRndInteger(0, seas.length - 1)];
     } else if (type=="valley") {
 
     } else if (type=="mountain") {
 
     } else if (type=="cave") {
-
+        natureWord=caves[getRndInteger(0, caves.length - 1)];
     } else if (type=="ravine") {
 
     } else if (type=="peak") {
@@ -277,72 +279,22 @@ function genNatureName() {
 
     };
 
-    if (pattern<3) {
-        finalName = natureWord + " " + natureName;
-    } else if (pattern>3 && pattern<6) {
-        finalName =  natureName + " " + natureWord;
-    } else if (pattern==7) {
-        finalName = natureName + "'s " + natureWord;
-    } else if (pattern==8) {
-        finalName = natureWord + " of " + natureName;
-    };
-
-    //Checks the output against a number regex that prevent unpronouncable names from being generated, unless the style is set to otherworldly
-    
-    if (style=="otherworldly") {
-    
-    } else {
-            //Tests for three hard consonants in a row
-            result = regex3C.test(output);
-
-            //If the regex test result is positive,  generate a new name 
-        if (result==true){
-            genPname();
+    if (style=="english") {
+        if (pattern<2) {
+            finalName = natureWord + " " + natureName; 
         } else {
-
+            finalName =  natureName + " " + natureWord;
         };
-
-        //Tests for any four consonants in a row
-        result = regex4C.test(output);
-
-        //If the regex test result is positive,  generate a new name 
-        if (result==true){
-            genPname();
-        } else {
-
-        };
-    };
-
-    //Checks the output agains two regex that prevent grammatically unsound names from being generated, such as names ending in - or '
-
-    //Tests for - character followed by a blankspace
-    result = regexScore.test(output);
-
-    //If the regex test result is positive,  generate a new name 
-    if (result==true){
-        genPname();
     } else {
-
-    };
-
-    //Tests for ' character followed by a blankspace
-    result = regexAp.test(output);
-
-    //If the regex test result is positive,  generate a new name 
-    if (result==true){
-        genPname();
-    } else {
-
-    };
-
-    //Test for a capital letter followed by a whilespace
-    result = regexSingle.test(output);
-
-        //If the regex test result is positive,  generate a new name 
-    if (result==true){
-        genPname();
-    } else {
-
+        if (pattern<3) {
+            finalName = natureWord + " " + natureName;
+        } else if (pattern>3 && pattern<6) {
+            finalName =  natureName + " " + natureWord;
+        } else if (pattern==7) {
+            finalName = natureName + "'s " + natureWord;
+        } else if (pattern==8) {
+            finalName = natureWord + " of " + natureName;
+        };    
     };
 
     //Display output
