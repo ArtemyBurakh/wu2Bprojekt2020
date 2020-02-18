@@ -19,15 +19,14 @@
                 <a href="places.html">Places</a>
         </nav>
         <nav id="nav3">Micellaneous</nav>
-        <article>
+        <article id="art1">
             <h1>Natural Places</h1>
             <h2>Style</h2>
                 <select type="multiple" id="NatureNameStyle">
                     <option value="english">English</option>
                     <option value="elegant">Elegant</option>
                     <option value="evil">Evil</option>
-                    <option value="rustic">Rustic</option>
-                    <option value="otherworldly">Otherworldy</option>
+                    <option value="rustic">Western</option>
                     <option value="nordic">Nordic</option>
                     <option value="southern">Southern</option>
                 </select>
@@ -47,8 +46,22 @@
             </select>
             <br>
             <button id="natureGenerate" onclick="genNatureName();">Generate Name</button>
-            <br>
+        </article>
             <h3><span id="nameout"></span></h3>
+        <article id="art2">
+                <h2>Style</h2>
+                <select type="multiple" id="ConsNameStyle">
+                    <option value="english">English</option>
+                    <option value="elegant">Elegant</option>
+                    <option value="evil">Evil</option>
+                    <option value="rustic">Rustic</option>
+                    <option value="nordic">Nordic</option>
+                    <option value="southern">Southern</option>
+                </select>
+                <select type="multiple" id="ConstNameType">
+                    <option value="fort">Fort</option>
+                    <option value="city">City</option>
+                </select>
         </article>
         <footer></footer>
 
