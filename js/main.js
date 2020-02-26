@@ -20,20 +20,20 @@ var regexSingle = new RegExp("[A-Z]\s");
 //Syllables are split into  4-5 groups
 
 //Elegant Syllables
-var elegantff=["El", "Il", "Vei", "Sa", "Se", "Mei", "Lae", "Ili", "Sie", "Et-", "Ca", "Ca-", "Ët", "Sï", "Ëf"];
-var elegantfl=["si", "et", "fa", "kie", "ji", "ala", "ale", "ël", "alë", "", "", "", "", ""];
+var elegantff=["El", "Il", "Vei", "Sa", "Se", "Mei", "Lae", "Ili", "Sie", "Et-", "Ca", "Ca-", "Ët", "Sï", "Ëf", "Em", "Lou", "Ja", "Mi", "Li", "Lë", "Ro"];
+var elegantfl=["si", "et", "fa", "kie", "ji", "ala", "ale", "ël", "alë", "", "", "", "", "", "ma", "ise", "de", "la", "a", "se", "na"];
 var elegantlf=["Va", "Ca", "Mia", "Vie", "Hel", "Hol", "Vei"];
 var elegantll=["son", "an", "ae", "ai", "rea", "en", "ei", "ine", "","","","","","",""];
 
 //Evil Syllables
-var evilff=["Ka", "Ka'", "Ka-", "Zo", "Zo'", "Wre", "Wyre", "Wey", "Wa'", "Wy'", "Gri", "Tem", "Nat", "Str"];
-var evilfl=["xz", "xz", "x", "z", "try", "ty", "zi", "zel", "per", "tyr", "wa", "wu", "wi", "vel", "vex", "vez", "", "", "", "",  "", "", ""];
+var evilff=["Ka", "Ka'", "Ka-", "Zo", "Zo'", "Wre", "Wyre", "Wey", "Wa'", "Wy'", "Gri", "Tem", "Nat", "Str", "Web"];
+var evilfl=["xz", "xz", "x", "z", "try", "ty", "zi", "zel", "per", "tyr", "wa", "wu", "wi", "vel", "vex", "vez", "bam", "na", "", "", "", "",  "", "", ""];
 var evillf=["Yl-", "Yl", "Ya", "Ya-", "Ya'", "Ze", "Ta", "Ty", "Tzy", "Xa", "Xy", "Lyx"];
 var evilll=["qa", "qe", "xas", "tza", "vie", "loch", "ach", "tra", "ze", "vje", "ale", "we"];
 
 //Rustic Syllables
-var rusticff=["Co", "Mi", "Ed", "Ja", "Gre", "Bru", "Mi", "To", "Bla", "Mar", "Da", "Va", "No", "Jo", "Mat", "And", "Oli", "No", "Ja", "Osc", "Ha", "Cha", "Alf", "Geo", "Wil", "Ja", "Ja", "Dan", "Con", "Se", "Ad", "Mich", "Char", "Lu", "Le", "Tho", "Matt", "Oli", "Is", "Av", "Li", "El", "Em", "Em", "Soph", "Ame", "Gra", "Chlo", "Ev"];
-var rusticfl=["so", "ct", "or", "en", "oe", "aw", "sh", "rl", "aig", "mon", "an", "joe", "ry", "ex", "ank", "m",  "iv", "er", "cob", "ah", "ck", "rry", "r" , "l", "lie",  "fie", "ge", "orge", "am", "", "", "", "-an", "-at", "-ca","", "", "", "", "", "", "", "", "", "ck", "mes", "el", "i", "or", "an", "am", "ael", "lie", "ke", "wis", "mas", "hew", "via", "la", "va", "ly", "la", "ily", "ma", "ie", "lia", "ce", "e", "ie"];
+var rusticff=["Co", "Mi", "Ed", "Ja", "Gre", "Bru", "Mi", "To", "Bla", "Mar", "Da", "Va", "No", "Jo", "Mat", "And", "Oli", "No", "Ja", "Osc", "Ha", "Cha", "Alf", "Geo", "Wil", "Ja", "Ja", "Dan", "Con", "Se", "Ad", "Mich", "Char", "Lu", "Le", "Tho", "Matt", "Oli", "Is", "Av", "Li", "El", "Em", "Em", "Soph", "Ame", "Gra", "Chlo", "Ev", "No", "Li", "Se", "Al", "Hu", "Gab", "Le", "Joh", "Ma", "Al", "Wil", "Ni", "Na", "Ne", "Vic", "Em", "Lau"];
+var rusticfl=["so", "ct", "or", "en", "oe", "aw", "sh", "rl", "aig", "mon", "an", "joe", "ry", "ex", "ank", "m",  "iv", "er", "cob", "ah", "ck", "rry", "r" , "l", "lie",  "fie", "ge", "orge", "am", "", "", "", "-an", "-at", "-ca","", "", "", "", "", "", "", "", "", "ck", "mes", "el", "i", "or", "an", "am", "ael", "lie", "ke", "wis", "mas", "hew", "via", "la", "va", "ly", "la", "ily", "ma", "ie", "lia", "ce", "e", "ie", "ah", "am", "bas", "ti", "enne", "ex", "go", "ri", "el", "on", "rk", "fie", "iam", "na", "tal", "ia", "la", "to", "ria", "ma", "ra", "", "", "", "", "", ""];
 var rusticlf=["Car", "Mac", "Bur", "Sno", "Spa", "Bat", "Law", "La", "Dav", "Da", "Ki", "Bat", "Bis", "Pre", "Hi", "Ka", "Qui", "Co", "Gra",  "G", "A",  "S", "Smi", "Jo", "Tay", "Bro", "Wil", "Wil", "Dav", "Wri", "Ev", "Wal", "Whi"];
 var rusticll=["iels", "hop", "cot", "ot", "ing", "ins", "in", "ne", "e", "ane", "in", "per", "er", "son", "erd", "er", "ins", "or", "ord", "ka",  "", "", "", "", "", "", "", "", "", "", "th", "nes", "lor", "wn", "iam", "s", "s", "s", "ies", "ght", "ans", "ker", "te"];
 var rusticSuffixes=["son", "son", "sson", "dottir", "datr", "doter", "bern", "barn", "kin",  "s", "s", "s",  "s", "", "", "", "", "", "", "", "", "", "","", "", "", "", "", "", "", "", "", "", "","","", "", "", "", "", "", "", "", "", "",""];
@@ -41,14 +41,15 @@ var rusticSuffixes=["son", "son", "sson", "dottir", "datr", "doter", "bern", "ba
 //Nordic Syllables
 var nordicff=["Abe","Lur", "Jen", "Ad", "Ae", "Ag", "Ag", "Ag", "Al", "Alf", "Alf", "Alv", "And", "And", "An", "Ar", "Arn", "As", "Ast", "Avu", "Ba", "Bal", "Bei", "Ben", "Ber", "Bjor", "Bjö", "Bjä", "Bod", "Bor", "Bre", "Bri", "Bryn", "Bul", "Har", "Dag", "Dan", "Dor", "Dra", "Dre", "Ed", "Ei", "Em", "Er", "Ev", "Fad", "Far", "Fell", "Fre", "Fro", "Fru", "Ful", "Gal", "Gei", "Ger", "Gis", "Gja", "Gol", "Gun", "Gre", "Gros", "Gun", "Gun", "Gun", "Had", "Had", "Hel", "Haj", "Har", "Hei", "Hei", "Hel", "Hen", "Hem", "Hert", "Horn", "Hjö", "Hjä", "Hor", "Her", "Hro", "Hul", "Id", "Ida", "Ig", "Igr", "Ing", "Ing", "Jer", "Jör", "Kar", "Kar", "Kje", "Kja", "Kyr", "Lam", "Lei", "Lem", "Lil", "Lis", "Lis", "Lod", "Lok", "Lond", "Lyd", "Läd", "Låd", "Mar", "Mar", "Mar", "Mat", "Mat", "Mau", "Må", "Mø", "Lø", "Tø", "Nar", "Når", "Nik", "Nil", "Nik", "Nor", "Od", "Og", "Ol", "On", "Or", "Jal", "Jol", "Jöl", "Jor", "Jor", "Kli", "Lam", "Leif", "Lef", "Lei", "Läg", "Lod", "Lor", "Mar", "Mar", "Mav", "Mik", "Mik", "Nar", "Nil", "Pon", "Pan", "Pån", "Rag", "Rev", "Ris", "Räv", "Ror", "Run", "Rus", "Sab", "Sör", "Sib", "Sig", "Sig", "Sig", "Sin", "Søn", "Søl", "Tal", "Tek", "Tem", "Tor", "Tør", "Tat", "Töt", "Tör", "Tho", "Tho", "Tyr", "Tor", "Tor", "Tor", "Tsu", "Uf", "Uf", "Ulf", "Uv", "Yng", "Yng", "Ys", "Wil", "Wil", "Wulf", "Wul", "Vor", "Vid", "Vid", "Vång", "Val"];
 var nordicfl=["burk", "", "" , "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "",  "", "", "ta", "var", "vild", "la", "na", "ni", "nis", "ing", "rinn", "va", "vor", "ders", "ders", "durs", "dörs", "nor", "ke", "fur", "sur", "ar", "nir", "gruf", "nar", "bus", "tild", "tilda", "or", "si", "na", "tur", "or", "lam", "il", "id", "fri", "lund", "lund", "lund", "tar", "ti", "ja", "ond", "wulf", "ling", "ing", "frek", "der", "dis", "gar", "ny", "ur", "en", "fa", "ifa", "mar", "id", "grim", "lund", "di", "ik", "kur", "is", "dis", "ida", "lk", "kas", "rd", "red", "ryd", "dir", "rig", "ta", "ka", "nar", "hem", "heim", "hjem", "hejmm", "ing", "ing", "jmar", "har", "dur", "ak", "ak", "rm", "ach", "gor", "ka", "ta", "ta", "jar", "jar", "rum", "ing", "var", "nar", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "ing", "ga", "ra", "rid", "na", "tar", "tär", "la", "hor", "dis", "den", "ic", "ik", "rik", "leif", "ta", "ta", "rl", "la", "ar", "eld", "eld", "ud", "lak", "ir", "ir", "dar", "yr", "ust", "rs", "ur", "arr", "elf", "kil", "bet", "i", "und", "heim", "en", "ul", "ga", "jar", "ring", "ga", "var", "mir", "ilf", "n"];
-var nordiclf=["Mi", "Dan", "Niel", "Jen", "Han", "Ped", "And", "Ras", "Pet", "Sär", "Sör", "Alf", "Alf", "Alv", "Gun", "Gre", "Gros", "Lab", "Mei", "Ban", "Sal"];
+var nordiclf=["Mi", "Dan", "Niel", "Jen", "Han", "Ped", "And", "Ras", "Pet", "Sär", "Sör", "Alf", "Alf", "Alv", "Gun", "Gre", "Gros", "Lab", "Mei", "Ban", "Sal", "Gis", "Gja", "Gol", "Gun", "Gre"];
 var nordicll=["al", "sy", "ma", "dr", "er", "er", "en", "mus", "er", "mus", "ten",  "", "", "",  "", "", "ta", "var", "vild", "la", "na", "ni", "nis", "ing", "rinn", "va", "vor", "ders", "ders", "durs", "dörs", "nor", "ke", "fur", "sur", "ar", "nir", "", "", "", "", "", "", "", "", "", ""];
 var nordicSuffixes=["son", "son", "sson", "dottir", "datr", "doter", "bern", "barn", "kin",  "", "", "", "", "", "", "", "", "", "","", ""];
 
 var southernff=["Moh", "You", "Ah", "Mah", "Mus", "Yas", "Tah", "Kha", "Ham", "Bil", "Ib", "Hass", "Hus", "Kar", "Tar", "Ab", "Ali", "Sel", "Abd", "Meh", "Om", "Mur", "Ra", "Sa", "Bra", "Dja", "Fat", "Sa", "Fat", "Mer", "Ai", "Kar", "Ke", "Nad", "Sha", "Fat", "Ma", "Re", "Far", "Ay", "Sha", "Ash", "Sah", "Fat", "Dal", "Doh", "Faj", "Su", "Ro", "Hos", "Has", "Gam", "Hab"];
 var southernfl=["-Kha", "del-Rah", "am", "ed", "sef", "sef", "sal-Ya", "am-Kha", "med", "moud", "ta", "fa", "sin", "ha", "led", "za", "al", "him", "san", "sein", "im", "eq", "del", "man", "ar", "ad", "dal", "lah", "chid", "him", "mel", "ima", "iha", "ara", "cha", "ina", "ri", "ma", "i", "maa", "em", "hd", "ra", "qat", "har", "in", "al", "ha", "an", "iny", "naa", "ila", "al", "at", "bib", "a", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-var southernlf=["Le", "Yo", "Dav", "Am", "Om", "Ha", "Ali"];
-var southernll=["vi", "sef", "suf", "id", "ar", "er", "dad"];
+var southernlf=["Le", "Yo", "Dav", "Am", "Om", "Ha", "Ali", "Mah", "Ah", "Has", "Ali", "Ib", "Gam", "Ab", "Sa", "Sal", "Ad", "Mos", "Sam", "Sol", "Sal", "Na", "Sa", "Kha", "El"];
+var southernll=["vi", "sef", "suf", "id", "ar", "er", "dad", "moud", "med", "san", "ra", "him", "al", "del", "lah", "el", "afa", "ir", "i", "man", "em", "eh", "bil", "yed", "y", "ed", "lil", "sa", "yed"];
+var southernSuffixes=["i", "i", "i", "i", "", "", "", "", "", "", ""];
 
 var easternff=["Na", "An", "Bo", "Che", "De", "Do", "Fe", "Ga", "Gu", "Hu", "Ji", "Ji", "Ka", "Lia", "Ni", "Pe", "Ta", "We", "Yo", "We", "Sō", "Mi", "Ich", "It", "Sa", "Re", "Hin", "Har", "Asa", "Har", "Tom", "Sō", "Yu", "Ara", "Hen", "Har", "Yu", "Ry", "Tai", "Ai", "Bi", "Fa", "Ho", "Li", "Li", "Ti", "Si", "Sa", "Ri", "Wa", "Ri", "Sa", "Hi", "Yu"];
 var easternfl=["ka", "ng", "ng", "ng", "an", "ng", "ng", "i", "n", "ng", "ng", "ng", "ku", "ra", "ko", "i", "a", "ka", "na", "ra", "n", "na", "ma", "ri", "na", "ta", "na", "de", "na", "to", "i", "ka", "su", "ki", "na", "ta", "ru", "ta", "shi", "mo", "ha", "ru", "ru", "ki", "ta", "uma", "ata", "ō", "to", "shi", "to", "ya", "ta", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
@@ -110,7 +111,7 @@ function getRndInteger(min, max) {
 
 //Generate  Person's Name
 function genPname(){
-   //alert(rusticLast.length);
+   //alert(southernfl.length);
     //Retrieve dropdown values    
     var style=document.getElementById("pNameStyle").value;
     var type=document.getElementById("pNameType").value;
@@ -146,8 +147,8 @@ function genPname(){
         case "southern":
             firstName = southernff[getRndInteger(0, southernff.length - 1)] + southernfl[getRndInteger(0, southernfl.length - 1)] + southernfl[getRndInteger(0, southernfl.length - 1)];
             midName = southernff[getRndInteger(0, southernff.length - 1)] + southernfl[getRndInteger(0, southernfl.length - 1)] + southernfl[getRndInteger(0, southernfl.length - 1)];
-            lastName = southernlf[getRndInteger(0, southernlf.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)];
-            familyName = southernlf[getRndInteger(0, southernlf.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)]; 
+            lastName = southernlf[getRndInteger(0, southernlf.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernSuffixes[getRndInteger(0, southernSuffixes.length-1)];
+            familyName = southernlf[getRndInteger(0, southernlf.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernll[getRndInteger(0, southernll.length - 1)] + southernSuffixes[getRndInteger(0, southernSuffixes.length-1)]; 
             break;
         case "eastern":
             firstName = easternff[getRndInteger(0, easternff.length - 1)] + easternfl[getRndInteger(0, easternfl.length - 1)] + easternfl[getRndInteger(0, easternfl.length - 1)];
@@ -344,7 +345,21 @@ function genNatureName() {
             break;
     };
 
-        //Checks the output against a number regex that prevent unpronouncable names from being generated, unless the style is set to otherworldly
+    if (natureType=="river" || natureType=="lake") {
+        if (getRndInteger(0,1)==0) {
+            output = natureWord + " " + natureName;
+        } else {
+        };
+    };
+
+    if (natureType=="mountain") {
+        if (getRndInteger(0,1)==0) {
+            output = "Mount " + natureName;
+        } else {
+        };
+    }
+
+     //Checks the output against a number regex that prevent unpronouncable names from being generated, unless the style is set to otherworldly
     //Tests for three hard consonants in a row
     result = regex3C.test(output);
 
@@ -390,7 +405,6 @@ function genNatureName() {
         genPname();
     } else {
     };
-
 
     document.getElementById('nameout').innerHTML =  output;
 };
