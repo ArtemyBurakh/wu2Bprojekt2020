@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Eagle+Lake&display=swap');
+
+body{
+    background: white;
+    font-family: 'Eagle Lake', cursive;
+}
+
+.container{
+    display:grid;
+    grid-template-areas: "hd hd hd hd hd"
+                        "nv1 nv2 nv3 nv4 nv5"
+                        "art art art art art"
+                        "ft ft ft ft ft";
+    gap:10px;
+}
+
+select {
+    width: 80%;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 1vh;
+    color: black;
+    font-family: 'Eagle Lake', cursive;
+    background-color: white;  
+}
+
+article {
+    background: gold;
+    text-align: center;
+    grid-area: art;
+}
+
+#nav1 {
+    grid-area: nv1;
+}
+#nav2 {
+    grid-area: nv2;
+}
+#nav3 {
+    grid-area: nv3;
+}
+#nav4 {
+    grid-area: nv4;
+}
+#nav5 {
+    grid-area: nv5;
+}
+
+nav {
+    background: gold;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 4%;
+}
+
+footer {
+    grid-area: ft;
+}
+
+header{
+    background: gold;
+    width: 100%;
+    height:100%;
+    border-radius: 10vh;
+    grid-area: hd;
+}
+
+nav {
+    
+    text-align: center;
+}
+
+.outputbox {
+    font-size: larger;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 2vh;
+    padding: 1vh;
+    background: white;
+}
+
+a {
+    color: black;
+    text-decoration: none; 
+}
