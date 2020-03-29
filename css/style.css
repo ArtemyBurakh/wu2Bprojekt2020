@@ -11,7 +11,32 @@ body{
                         "nv1 nv2 nv3 nv4 nv5"
                         "art art art art art"
                         "ft ft ft ft ft";
-    gap:10px;
+    gap: 1vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{    
+        grid-template-areas: "hd hd"
+                            "nv1 nv1"
+                            "nv2 nv3"
+                            "nv4 nv5"
+                            "art art"
+                            "ft ft";
+        gap: 0.5vh;
+    }
+
+    .outputbox {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+}
+
+#logo {
+    height: 20vh;
+    margin-left: 50%;
+    margin-right: 50%;
 }
 
 select {
@@ -25,9 +50,20 @@ select {
 }
 
 article {
-    background: gold;
+    background: #ffde2d;
     text-align: center;
     grid-area: art;
+}
+
+button {
+    width: 20%;
+    padding: 1vh;
+    margin: 2vh;
+    border-radius: 1vh;
+    color: black;
+    font-family: 'Eagle Lake', cursive;
+    background-color: white;  
+    cursor: pointer;
 }
 
 #nav1 {
@@ -47,22 +83,28 @@ article {
 }
 
 nav {
-    background: gold;
+    background: #ffde2d;
     padding: 2%;
     margin: 2%;
-    border-radius: 4%;
+    border-radius: 2vh;
 }
 
 footer {
     grid-area: ft;
+    text-align: center;
+    background: #ffde2d;
+    padding: 0.1%;
+    margin: 0.1%;
+    border-radius: 1vh;
 }
 
 header{
-    background: gold;
+    background: #ffde2d;
     width: 100%;
     height:100%;
     border-radius: 10vh;
     grid-area: hd;
+    text-align: center;
 }
 
 nav {
@@ -73,10 +115,10 @@ nav {
 .outputbox {
     font-size: larger;
     text-align: center;
-    margin-left: 35%;
-    margin-right: 35%;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1%;
+    margin-bottom: 1%;
     border-radius: 2vh;
     padding: 1vh;
     background: white;
@@ -86,3 +128,22 @@ a {
     color: black;
     text-decoration: none; 
 }
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+h1 {
+    font-size:  x-large;
+}
+
+h2 {
+    font-size: medium;
+}
+
+#infobox {
+    text-align: left;
+    padding: 1vh;
+}
+

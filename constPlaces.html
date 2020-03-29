@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <header>Name Generator</header>
+        <header><h1>Name Generator</h1></header>
         <nav id="nav1">
                 <a href="index.html">People</a>
         </nav> 
@@ -30,11 +30,11 @@
         <article id="art1">
             <h1>Constructed Places</h1>
             <h2>Style</h2>
-            <select type="multiple" id="ConsNameStyle">
+            <select type="multiple" id="ConstNameStyle">
                 <option value="english">English</option>
                 <option value="elegant">Elegant</option>
                 <option value="evil">Evil</option>
-                <option value="rustic">Rustic</option>
+                <option value="rustic">Western</option>
                 <option value="nordic">Nordic</option>
                 <option value="southern">Southern</option>
             </select>
@@ -46,14 +46,19 @@
                 <option value="camp">Encampment</option>
                 <option value="house">House</option>
                 <option value="shrine">Shrine</option>
+                <option value="tomb">Tomb</option>
             </select>
             <br>
-            <button id="constGenerate" onclick="genConst();">Generate Name</button>
+            <button id="constNameGenerate" onclick="genConst();">Generate Name</button>
             <br>
             <div class=outputbox> <h3><span id="nameout"></span></h3></div>
         </article>
-        <footer></footer>
-
+        <footer>
+            <p>
+            Source Code CC BY-NC-ND 4.0
+            <br>
+            Names CC0</p>
+        </footer>
     </div>
 </body>
 </html>
