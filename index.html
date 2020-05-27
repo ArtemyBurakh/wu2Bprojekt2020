@@ -11,22 +11,24 @@
     </head>
     <body>
         <div class="container">
-            <header><h1>Name Generator</h1></header>
-            <nav id="nav1">
-                    <a href="index.html">People</a>
-            </nav> 
-            <nav id="nav2">
+            <nav>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">People</button>
+                <div id="myDropdown" class="dropdown-content">
                     <a href="naturePlaces.html">Places in Nature</a>
+                    <a href="constPlaces.html">Constructed Places</a>
+                    <a href="copyright.html">Copyright</a>
+                    <a href="info.html">Info</a>
+                </div>
+                </div> 
             </nav>
-            <nav id="nav3">
-            <a href="constPlaces.html">Constructed Places</a>
-            </nav>
-            <nav id="nav4">
-                <a href="copyright.html">Copyright</a>
-            </nav>
-            <nav id="nav5">
-                <a href="info.html">Info</a>
-            </nav>
+                
+            <header>
+                    <h1>Name Generator</h1>
+                    <p>Over 19.5 quadrillion names for people and 7 billion names for people</p>
+                </header>
+            
+           
             <article>
                 <h1>People</h1>
                 <h2>Style</h2>
@@ -57,7 +59,7 @@
                     <option value="noble">Noble</option>
                 </select>
                 <br>
-                <button id="natureGenerate" onclick="genPname();">Generate Name</button>
+                <button id="personGenerate">Generate Name</button>
                 <br>
                 <div class=outputbox> <h3><span id="nameout"></span></h3></div>
         </article>

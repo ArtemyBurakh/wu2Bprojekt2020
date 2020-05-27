@@ -11,24 +11,22 @@
 </head>
 <body>
     <div class="container">
-        <header><h1>Name Generator</h1></header>
-        <nav id="nav1">
-                <a href="index.html">People</a>
-        </nav> 
-        <nav id="nav2">
-                <a href="naturePlaces.html">Places in Nature</a>
-        </nav>
-        <nav id="nav3">
-           <a href="constPlaces.html">Constructed Places</a>
-        </nav>
-        <nav id="nav4">
-            <a href="copyright.html">Copyright</a>
-        </nav>
-        <nav id="nav5">
-            <a href="info.html">Info</a>
-        </nav>
-        <article id="art1">
-            <h1>Constructed Places</h1>
+            <nav>
+                <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Constructed Places</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="index.html">People</a>
+                    <a href="naturePlaces.html">Places in Nature</a>
+                    <a href="copyright.html">Copyright</a>
+                    <a href="info.html">Info</a>
+                </div>
+                </div> 
+            </nav>
+            <header>
+                    <h1>Name Generator</h1>
+                    <p>Over 19.5 quadrillion names for people and 7 billion names for people</p>
+            </header>
+            <article><h1>Constructed Places</h1>
             <h2>Style</h2>
             <select type="multiple" id="ConstNameStyle">
                 <option value="english">English</option>
@@ -50,7 +48,7 @@
                 <option value="tomb">Tomb</option>
             </select>
             <br>
-            <button id="constNameGenerate" onclick="genConst();">Generate Name</button>
+            <button id="constNameGenerate">Generate Name</button>
             <br>
             <div class=outputbox> <h3><span id="nameout"></span></h3></div>
         </article>

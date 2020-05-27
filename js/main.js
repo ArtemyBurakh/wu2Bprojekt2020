@@ -5,6 +5,46 @@ var regexScore = new RegExp("-\s");
 var regexAp = new RegExp("'\s");
 var regexSingle = new RegExp("[A-Z]\s");
 
+//Add event listeners when DOM Content is loaded
+document.addEventListener('DOMContentLoaded', createNatureEventListeners, false);
+function createNatureEventListeners(){
+  var natureButton = document.getElementById('natureGenerate');
+  natureButton.addEventListener('click', genNatureName, true);
+};
+
+document.addEventListener('DOMContentLoaded', createConstEventListener, false);
+function createConstEventListener() {
+    var constButton = document.getElementById('constNameGenerate');
+    constButton.addEventListener('click', genConst, true);
+};
+
+document.addEventListener('DOMContentLoaded', createPersonEventListener, false);
+function createPersonEventListener() {
+    var personButton = document.getElementById('personGenerate');
+    personButton.addEventListener('click', genPname, true);
+};
+
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  } 
+
 //Syllables are split into  4-5 groups
 
 //Elegant Syllables
